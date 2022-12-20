@@ -12,9 +12,15 @@ Example input: "I'm almost out of coffee"
 Example output: "I'M 😱 ALMOST 😱 OUT 😱 OF 😱 COFFEE!"
 */
 function panic(str){
-    return str.split(' ').join('  😱  ').toUpperCase() +"!";
+    if(typeof str === "string"){
+        return str.split(' ').join(' 😱 ').toUpperCase() + "!";
+    }else{
+        return "Please type in a word or string";
+    }
 }
 
 // Test your function
 console.log(panic("I'm almost out of coffee")); 
 console.log(panic("winter is coming"));
+console.log(panic("hello"));
+console.log(panic(123));
